@@ -309,9 +309,9 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 8080
+    - port: 8088
       name: tcp-service
-      targetPort: 8080
+      targetPort: 8088
   selector:
     
     opentelemetry.io/name: opentelemetry-demo-productcatalogservice
@@ -1503,7 +1503,7 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             
-            - containerPort: 8080
+            - containerPort: 8088
               name: service
           env:
             - name: OTEL_SERVICE_NAME
@@ -1516,7 +1516,7 @@ spec:
             - name: OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE
               value: cumulative
             - name: PRODUCT_CATALOG_SERVICE_PORT
-              value: "8080"
+              value: "8088"
             - name: FLAGD_HOST
               value: 'opentelemetry-demo-flagd'
             - name: FLAGD_PORT
